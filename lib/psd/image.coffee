@@ -18,7 +18,8 @@ module.exports = class Image extends Module
   ]
 
   constructor: (@file, @header) ->
-    @numPixels = @width() * @height()
+
+    @numPixels = @width() * @.height()
     @numPixels *= 2 if @depth() is 16
 
     @calculateLength()

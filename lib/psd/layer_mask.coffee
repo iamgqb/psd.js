@@ -36,6 +36,9 @@ module.exports = class LayerMask
       for i in [0...layerCount]
         @layers.push new Layer(@file, @header).parse()
 
+      for layer in @layers
+        layer.parseChannelImage(layer)
+
   parseGlobalMask: ->
     length = @file.readInt()
     return if length <= 0
